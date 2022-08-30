@@ -11,16 +11,15 @@ import com.maiane.cursomc.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {
-	
+
 	@Autowired
 	private CategoriaRepository repo;
 
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-		"Objeto não encontrado! id: " + id + ", Tipo: " + Categoria.class.getName(), null));
-		
-		
+				"Objeto não encontrado! id: " + id + ", Tipo: " + Categoria.class.getName(), null));
+
 	}
-	
+
 }
